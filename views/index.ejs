@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="homepage container">
+    <h1 class="title"><%= title %></h1>
+    <p class="title">Leave your thoughts!</p>
+
+    <form action="/new-message" class="message-button">
+      <button type="submit" >New Message</button>
+    </form>
+  
+
+    <div>
+      <ul class="messages-container">
+        <% for (var i = 0; i < messages.length; i++) { %>
+        <li class="message-box">
+          <div class="user"><strong><%= messages[i].user %></strong></div>
+          <div class="text"><%= messages[i].text %></div>
+            <div class="date">
+                <%= messages[i].added %> 
+            </div>
+        </li>
+        <% } %>
+    </ul>
+    </div>
+    </div> 
+  </body>
+</html>
